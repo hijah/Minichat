@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniChatServer", "MiniChatServer\MiniChatServer.csproj", "{D96EF921-F630-4380-BBFF-A1FF4079856B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniChatClient", "MiniChatClient\MiniChatClient.csproj", "{A433C84D-25BA-4C63-8440-F7D7BD84AB2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D96EF921-F630-4380-BBFF-A1FF4079856B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D96EF921-F630-4380-BBFF-A1FF4079856B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D96EF921-F630-4380-BBFF-A1FF4079856B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A433C84D-25BA-4C63-8440-F7D7BD84AB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A433C84D-25BA-4C63-8440-F7D7BD84AB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A433C84D-25BA-4C63-8440-F7D7BD84AB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A433C84D-25BA-4C63-8440-F7D7BD84AB2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
