@@ -12,7 +12,7 @@ namespace MiniChatClient
         {
             Client client = new Client();
             client.start();
-
+            
             
         }
     }

@@ -2,19 +2,16 @@
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 
 namespace MiniChatServer
 {
     public class Server
     {
-
-        public void start()
+        public void DoClient(TcpClient socket)
         {
-            TcpListener server = new TcpListener(IPAddress.Loopback, 7070);
-            server.Start();
 
-            using (TcpClient client = server.AcceptTcpClient())
-            using (NetworkStream ns = client.GetStream())
+            using (NetworkStream ns = socket.GetStream())
             using (StreamReader sr = new StreamReader(ns))
             using (StreamWriter sw = new StreamWriter(ns))
                 while (true)
@@ -27,11 +24,17 @@ namespace MiniChatServer
                     sw.Flush();
                     if (myline == "STOP" || line == "STOP")
                     {
-                        break;
+                        socket.Close();
                     }
                 }
-            server.Stop();
+        }
 
+        public void start()
+        {
+            TcpListener server = new TcpListener(IPAddress.Loopback, 7070);
+            server.Start();
+            using (TcpClient socket = server.AcceptTcpClient())
+                DoClient(socket);
 
         }
     }

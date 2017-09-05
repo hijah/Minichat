@@ -13,6 +13,7 @@ namespace MiniChatClient
     {
         public void start()
         {
+            Console.WriteLine("Skriv her");
             using (TcpClient socket = new TcpClient("localhost", 7070))
             using (NetworkStream ns = socket.GetStream())
             using (StreamReader sr = new StreamReader(ns))
@@ -24,9 +25,10 @@ namespace MiniChatClient
                     sw.Flush();
                     string line = sr.ReadLine();
                     Console.WriteLine(line);
+
                     if (myline == "STOP" || line == "STOP")
                     {
-                        break;
+                        socket.Close();
                     }
                 }
         }
